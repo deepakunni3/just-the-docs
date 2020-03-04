@@ -1,9 +1,6 @@
 <nav role="navigation" aria-label="Main navigation">
   <ul class="navigation-list">
-    {%- assign html_pages = site.html_pages | sort:"nav_order" -%}
-    {%- assign docs = null -%}
-    {%- assign docs = site.docs | sort:"nav_order" -%}
-    {%- assign pages_list = html_pages | concat: docs | sort:"nav_order" -%}
+    {%- assign pages_list = site.html_pages | sort:"nav_order" -%}
     {%- for node in pages_list -%}
       {%- unless node.nav_exclude -%}
         {%- if node.parent == nil -%}
